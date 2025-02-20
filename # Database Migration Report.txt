@@ -1,0 +1,32 @@
+# Database Migration Report
+
+## 1. Overview
+This report documents the migration of data from MySQL to PostgreSQL.  
+The migration was completed using a SQL script that recreated the database, tables, and inserted the necessary records into PostgreSQL.
+
+## 2. Steps Followed
+1. Created a new database in PostgreSQL named `my_postgres_db`.
+2. Created a `users` table with the same structure as in MySQL.
+3. Inserted the required data into the `users` table.
+4. Verified that the data was successfully inserted.
+
+## 3. SQL Script Used
+The following SQL script was executed to complete the migration:
+
+```sql
+CREATE DATABASE my_postgres_db;
+\c my_postgres_db;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+INSERT INTO users (name, email) VALUES
+('Alice Johnson', 'alice@example.com'),
+('Bob Smith', 'bob@example.com'),
+('Charlie Brown', 'charlie@example.com');
+
+SELECT * FROM users;
