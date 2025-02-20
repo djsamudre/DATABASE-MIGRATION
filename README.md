@@ -78,3 +78,7 @@ The migration from MySQL to PostgreSQL was successfully completed while preservi
 
 Post-migration verification confirmed that all records were correctly transferred, ensuring that the PostgreSQL database mirrored the original MySQL database accurately.
 
+*OUTPUT*:
+
+![Image](https://github.com/user-attachments/assets/9f3e7302-e3a6-4f2b-9ad8-9acf235be205)
+
